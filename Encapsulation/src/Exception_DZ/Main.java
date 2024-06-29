@@ -49,12 +49,12 @@ public class Main {
      //метод, который принимает целое число в качестве параметра и
      //выдает исключение, если число нечетное.
 
-    public static void parity( int num ) {
+    public static void parity ( int num ) throws Exception{
             try {
                 if ( (num % 2) != 0 ) throw new Exception();
                 else System.out.println("Число четное.");
 
-            } catch (Exception e) {
+            }  catch (Exception e) {
                 System.out.println("Число не четное.");
             }
     }
