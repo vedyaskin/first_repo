@@ -1,26 +1,15 @@
-/**
- * 1.Напишите метод, который принимает целое число в качестве параметра и
- * выдает исключение, если число нечетное.
- * Необходимо протестировать ее в методе main с разными числами.
- *
- * 2.Напишите метод, который принимает строку в качестве входных данных
- * и выдает исключение, если строка содержит числа
- */
 
 package Exception_DZ;
 import java.util.Scanner;
 public class Main {
 
     public static void main (String[] args) throws Exception {
-
         int num;
         String exitString = "";
         boolean exit = false;
-
         /**
          * В этом цикле вызываем метод parity()
          */
-
         while ( !exit ){
             try {
                 System.out.print("Введите число: ");
@@ -37,7 +26,6 @@ public class Main {
             if ( exitString.equalsIgnoreCase("q") )
                 exit = true;
         }
-
         exit = false;
         /**
          * В этом цикле вызываем метод checkString()
@@ -57,7 +45,6 @@ public class Main {
             if ( exitString.equalsIgnoreCase("q") )
                 exit = true;
         }
-
     }
     /**
      * метод, который принимает целое число в качестве параметра и
@@ -70,7 +57,6 @@ public class Main {
 
             } catch (Exception e) {
                 System.out.println("Число не четное.");
-
             }
 
     }
