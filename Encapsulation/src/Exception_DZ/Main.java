@@ -5,11 +5,10 @@ public class Main {
 
     public static void main (String[] args) throws Exception {
         int num;
-        String exitString = "";
+        String exitString;
         boolean exit = false;
-        /**
-         * В этом цикле вызываем метод parity()
-         */
+
+        // В этом цикле вызываем метод parity()
         while ( !exit ){
             try {
                 System.out.print("Введите число: ");
@@ -27,9 +26,9 @@ public class Main {
                 exit = true;
         }
         exit = false;
-        /**
-         * В этом цикле вызываем метод checkString()
-         */
+
+        // В этом цикле вызываем метод checkString()
+
         while ( !exit ){
             try {
                 System.out.print("Введите строку для проверки на наличие чисел ");
@@ -46,11 +45,11 @@ public class Main {
                 exit = true;
         }
     }
-    /**
-     * метод, который принимает целое число в качестве параметра и
-     * выдает исключение, если число нечетное.
-     */
-    public static void parity( int num ) throws Exception {
+
+     //метод, который принимает целое число в качестве параметра и
+     //выдает исключение, если число нечетное.
+
+    public static void parity( int num ) {
             try {
                 if ( (num % 2) != 0 ) throw new Exception();
                 else System.out.println("Число четное.");
@@ -58,13 +57,9 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Число не четное.");
             }
-
     }
-    /**
-     * метод, который принимает строку в качестве входных данных
-     * и выдает исключение, если строка содержит числа
-     */
-
+    //метод, который принимает строку в качестве входных данных
+    //и выдает исключение, если строка содержит числа
     public static void checkString( String string ) throws Exception{
         char[] stringArray = string.toCharArray();
         for (char i : stringArray){
