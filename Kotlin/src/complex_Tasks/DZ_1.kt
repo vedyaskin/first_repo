@@ -7,7 +7,7 @@ fun main(){
     val n = 9
     var sum : Double = 0.0
     for ( i in 1..n){
-        sum += (i + 1)
+        sum += 1.0 / i
     }
     println("Сумма = $sum")
 }
