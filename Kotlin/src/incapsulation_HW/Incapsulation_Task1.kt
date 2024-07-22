@@ -10,9 +10,9 @@ fun main() {
     val card = Bank_Card()
     // вводим данные
     card.cardNumber = "1234567891234567"
-    card.cvcSet(123)
-    // выводим на экран
     println("Номер карты: ${card.cardNumber}")
+
+    card.cvcSet(123)
     card.getCvc()
 }
 
@@ -24,7 +24,7 @@ class Bank_Card {
             if (value.length == 16) {
                 field = value
             } else {
-                println("Введен не правильный номер")
+                println("Введен не правильный номер карты")
                 field = "Error"
             }
         }
@@ -32,36 +32,41 @@ class Bank_Card {
 
     private var cvc: Int = 0
         set(value) {
-
             // Проверка на трехзначность т.к. cvc состоит из 3-х цифр
 
             if (value in 100..999) {
                 field = value
             } else {
-                println("Введен не правильный код")
+                println("Введен не правильный CVC код")
                 field = 0
             }
         }
         get() {
-            var count = 3
-            var check: Boolean = false
-            while (count-- > 0) {
-                println("Для просмотра cvc кода введите пароль")
-                // используем исключение как на java
-                try {
-                    var pswd = readln().toInt()
-                    if (pswd == passwordForCvc) {
-                        check = true
-                        break
+            if ( field != 0 ) {
+                var count = 3
+                var check: Boolean = false
+                while (count-- > 0) {
+                    println("Для просмотра cvc кода введите пароль")
+                    // проверяем правильность пароля, используя исключение как на java
+                    try {
+                        var pswd = readln().toInt()
+                        if (pswd == passwordForCvc) {
+                            check = true
+                            break
+                        } else {
+                            println("Пароль неверный, попробуйте еще раз:")
+                            println("Осталось попыток $count")
+                        }
+                    } catch (e: NumberFormatException) {
+                        println("Пароль неверный, попробуйте еще раз:")
+                        println("Осталось попыток $count")
                     }
-                } catch (e: NumberFormatException) {
-                    println("Пароль неверный, попробуйте еще раз:")
-                    println("Осталось попыток $count")
                 }
-            }
-            return if (check) {
-                field  // Возврат значения CVC кода
-            } else 0  // возвращаем 0 если пароль введен не верно
+
+                return if (check) {
+                    field  // Возврат значения CVC кода
+                } else 0  // возвращаем 0 если пароль введен не верно
+            } else return field
         }
 
     fun cvcSet(c: Int) {
