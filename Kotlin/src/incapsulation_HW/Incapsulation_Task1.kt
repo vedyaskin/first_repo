@@ -17,7 +17,7 @@ fun main() {
 }
 
 class Bank_Card {
-    val passwordForCvc = 12345 // пароль для доступа к cvc
+    val passwordForCvc = "12345" // пароль для доступа к cvc
 
     var cardNumber: String = ""
         set(value) {
@@ -42,27 +42,23 @@ class Bank_Card {
             }
         }
         get() {
+            // если поле CVC введено верно, то запрашиваем пароль
+            // и проверяем его правильность
             if ( field != 0 ) {
-                var count = 3
-                var check: Boolean = false
+                var count = 3 // количество попыток ввода пароля
+                var check: Boolean = false // описывает правильно ли введен пароль или нет
                 while (count-- > 0) {
                     println("Для просмотра cvc кода введите пароль")
-                    // проверяем правильность пароля, используя исключение как на java
-                    try {
-                        var pswd = readln().toInt()
-                        if (pswd == passwordForCvc) {
+                    // проверяем правильность пароля,
+                        var pswd = readln()
+                        if (pswd.equals(passwordForCvc) ) {
                             check = true
                             break
                         } else {
                             println("Пароль неверный, попробуйте еще раз:")
                             println("Осталось попыток $count")
                         }
-                    } catch (e: NumberFormatException) {
-                        println("Пароль неверный, попробуйте еще раз:")
-                        println("Осталось попыток $count")
-                    }
                 }
-
                 return if (check) {
                     field  // Возврат значения CVC кода
                 } else 0  // возвращаем 0 если пароль введен не верно
