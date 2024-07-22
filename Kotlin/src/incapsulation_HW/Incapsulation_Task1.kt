@@ -15,6 +15,7 @@ fun main() {
 
     // вводим CVC код
     card.cvcSet(123)
+    // выводим на экран cvc код
     card.getCvc()
 }
 
