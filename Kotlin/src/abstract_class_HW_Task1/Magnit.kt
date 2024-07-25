@@ -13,10 +13,11 @@ class Magnit(val address: String, shopNumber: Int, hourOpen: Int, hourClose: Int
 
     // функция прогнозирует выручку или убыток, при реализации
     // скоропортящегося товара за N дней
+    // spoilage это процент порчи товара в день
     override fun profit(goodsForSaleValue: Double, period_days: Int, spoilage: Int) {
 
         var spoilage: Double = spoilage.toDouble()/100
-        // вычисляем оставшуюся долю стоимости товаров после учета порчи
+        // вычисляем оставшуюся долю стоимости товаров после порчи
         // Из единицы (что представляет 100% начальной стоимости товаров) вычитается общая доля порчи.
         var goodFood = (1 - (period_days * spoilage))
 
