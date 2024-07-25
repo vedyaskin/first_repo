@@ -17,7 +17,7 @@ class Pyaterochka(val address: String, shopNumber: Int, hourOpen: Int, hourClose
     }
 
     // функция вычисляет выручку с учетом наценки
-   // var markup = 0.1 // наценка 10%
+   // markup это наценка в %
     override fun profit(goodsForSaleValue: Double, period_days: Int, markup: Int)
     {
         var markup: Double = markup.toDouble()/100
