@@ -7,13 +7,13 @@ package NestedClasses_Task1
  * legs(ноги), в каждом из классов напишите функции этой части тела.
  * В главной функции опишите модель человека, вызвав всю функциональность написанных классов.
  */
-class Human(val name: String, val age: Int) {
+class Human(val name: String) {
 
-// создаем экземпляры внутренних классов
+    // создаем экземпляры внутренних классов
     val head = Head()
     val legs = Legs(name)
 
-// создаем внутренние классы
+    // создаем внутренние классы
     inner class Head() {
         fun thinks() = "$name думает."
         fun eats() = "$name ест."
@@ -23,6 +23,7 @@ class Human(val name: String, val age: Int) {
         fun walking() {
             println("Человек по имени $name идет.")
         }
+
         fun standing() {
             println("Человек по имени $name стоит.")
         }
@@ -30,7 +31,7 @@ class Human(val name: String, val age: Int) {
 }
 
 fun main() {
-    val vasya = Human("Вася", 35)
+    val vasya = Human("Вася")
 
     println(vasya.head.eats())
     println(vasya.head.thinks())
