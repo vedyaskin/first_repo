@@ -7,11 +7,10 @@ package Override_Task3
  */
 fun main(){
     val string = "ПриВет, кАк деЛа"
-    val charArray = string.toCharArray()
     var count = 0
     println( string )
     print("Символы в верхнем регистре: ")
-    for ( i in charArray ){
+    for ( i in string ){
         if (i.isUpperCase()) {
             print("$i ")
             count++

@@ -8,20 +8,26 @@ fun main() {
     val array = arrayOf("Иванов", "Петров", "Сидоров", "Процветов", "Протасов")
     search("проц", array)
 }
+
 // функция для поиска
 fun search(symbols: String, array: Array<String>) {
 
     val symbols = symbols // содержит символы по которым будем искать
-    var subSring = "" // подстрока элемента массива
 
     for (elementOfArray in array) {
-
-        // извлекаем подстроку размером symbols.length из элемента массива
-        subSring = elementOfArray.substring(0, symbols.length);
-
-        if (symbols.equals(subSring, ignoreCase = true)) {
-            println(elementOfArray)
+        var count = 0 // счетчик совпадения элементов
+        for (i in 0..< symbols.length) {
+            if (symbols[i].equals(elementOfArray[i], ignoreCase = true)) {
+                count++
+            } else break
         }
+        if (count == symbols.length) println(elementOfArray)
     }
+//  var subSring = "" // подстрока элемента массива
+// извлекаем подстроку размером symbols.length из элемента массива
+// subSring = elementOfArray.substring(0, symbols.length);
+//        if (symbols.equals(subSring, ignoreCase = true)) {
+//            println(elementOfArray)
+//        }
 }
 
