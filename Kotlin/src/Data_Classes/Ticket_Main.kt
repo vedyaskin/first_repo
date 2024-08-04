@@ -1,7 +1,6 @@
 package Data_Classes
 
-val numberOfSeat = 15 // количество мест в зале
-
+val numberOfSeat = 5 // количество мест в зале
 
 // создаем базу фильмов
 var base = MovieBase(
@@ -17,7 +16,6 @@ val numberOfTickets = numberOfSeat * base.movies.size
 
 // массив, содержащий проданные билеты
 var archiveArray: Array<Ticket> = Array<Ticket>(numberOfTickets) { Ticket("", 0, "") }
-
 
 fun main() {
 
@@ -35,7 +33,6 @@ fun main() {
             println("Программа завершена.")
             break
         }
-
         val action = input?.toIntOrNull()
         when (action) {
             1 -> sellTicket2()
@@ -54,10 +51,14 @@ fun selectMovie(): Int {
 }
 
 fun printTickets() {
+    var countOfTickets = 0
     for (i in archiveArray) {
         if (i.title != "") {
             println(i.toString())
-        }
+        } else countOfTickets++
+    }
+    if (countOfTickets == archiveArray.size){
+        println("Ни одного билета не продано.")
     }
 }
 
@@ -66,17 +67,22 @@ fun sellTicket2() {
         val index = selectMovie()
         val title = base.movies[index].title
         val time = base.movies[index].time
-        val seat = base.selectSeat(title, time)
+        if (!base.movies[index].isFullHall()) {
+            val seat = base.selectSeat(title, time)
 
-        for (i in archiveArray.indices) {
-            if (archiveArray[i].title == "") {
-                archiveArray[i] = Ticket(title, seat, time)
-                break
+            // заносим в массив проданный билет
+            for (i in archiveArray.indices) {
+                if (archiveArray[i].title == "") {
+                    archiveArray[i] = Ticket(title, seat, time)
+                    break
+                }
             }
+            println("Куплен билет на фильм $title в $time, место $seat")
+            base.movies[base.getIndex(title, time)].getAllSeats()
+            break
+        } else {
+            break
         }
-        println("Куплен билет на фильм $title в $time, место $seat")
-        base.movies[base.getIndex(title, time)].getAllSeats()
-        break
     }
     println("Для продолжения нажмите Enter")
     readln()

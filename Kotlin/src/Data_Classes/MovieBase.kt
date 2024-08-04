@@ -1,4 +1,5 @@
 package Data_Classes
+
 /**
  * Представляет базу данных фильмов.
  * Предоставляет методы для выбора фильма.
@@ -78,8 +79,10 @@ class MovieBase(vararg val movies: Movie) {
             println("Выберите место: ")
             movies[indexOfMovie].getAllSeats()
             val input = readln()?.toIntOrNull()
-            if (input != null && input <= movies[indexOfMovie].numberOfSeat) {
-                if (movies[indexOfMovie].getFreeSeat(input)) {
+
+            if (input != null) {  //&& movies[indexOfMovie].getFreeSeat(input)) { //input <= movies[indexOfMovie].numberOfSeat) {
+
+                if (movies[indexOfMovie].isFreeSeat(input)) {
                     movies[indexOfMovie].setSoldSeat(input)
                     return input
                     break

@@ -14,8 +14,11 @@ class Movie(val title: String, val time: String, val numberOfSeat: Int) {
     fun getAllSeats (){
         hall.getAllSeats()
     }
-    fun getFreeSeat(seat: Int): Boolean {
-        return hall.getFreeSeat(seat)
+    fun isFullHall(): Boolean{
+        return hall.isFullHall()
+    }
+    fun isFreeSeat(seat: Int): Boolean {
+        return hall.isFreeSeat(seat)
     }
     fun setSoldSeat(seat: Int) {
         hall.setSoldSeat(seat)

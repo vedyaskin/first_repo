@@ -21,22 +21,37 @@ open class Hall(val seat: Int) {
         println("Схема зала:")
         println("X - занято, число - свободно")
         println("--------------------------------")
+
         for ((index, value) in arrayOfSeats.withIndex()) {
             if ((index + 1) % 5 != 0) {
                 print("$value\t")
+
             } else println(value)
         }
     }
 
-    fun getFreeSeat(seat: Int): Boolean {
+    fun isFullHall(): Boolean{
+        var countOfFree = 0
+        for (i in arrayOfSeats){
+            if (i == "X") countOfFree++
+        }
+
+        if (countOfFree == arrayOfSeats.size) {
+            println("Все места заняты.")
+            return true
+        } else return false
+    }
+    fun isFreeSeat(seat: Int): Boolean {
 
         if (seat > this.seat) {
             println("Такого места нет. Количество мест ${this.seat}")
             return false
-        } else if (arrayOfSeats[seat - 1] == "X") {
+        }
+        else if (arrayOfSeats[seat - 1] == "X") {
             println("Место занято.")
             return false
-        } else return true
+        }
+        else return true
     }
 }
 
