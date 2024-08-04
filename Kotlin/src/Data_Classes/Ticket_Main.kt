@@ -67,6 +67,7 @@ fun sellTicket2() {
         val index = selectMovie()
         val title = base.movies[index].title
         val time = base.movies[index].time
+        // если зал не полон
         if (!base.movies[index].isFullHall()) {
             val seat = base.selectSeat(title, time)
 
