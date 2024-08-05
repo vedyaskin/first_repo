@@ -6,7 +6,7 @@ package Anonym_Class
  */
 
 fun main(){
-    val stringArray = arrayOf("апельсин", "баnnnnnnnнан", "абрикос", "Крыжовник", "яблоко")
+    val stringArray = arrayOf("апельсин", "банан", "абрикос", "Крыжовник", "яблоко")
     var maxWord = ""
     for (i in stringArray){
         if ( maxWord.length < i.length){
