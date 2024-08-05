@@ -6,7 +6,7 @@ package Anonym_Class
 fun main() {
     val matrix = arrayOf(
         arrayOf(4, 6, 1, 3),
-        arrayOf(5, 7, 9, 0),
+        arrayOf(5, 7, 10, 0),
         arrayOf(8, 2, 11, 10),
         arrayOf(13, 14, 15, 12)
     )
