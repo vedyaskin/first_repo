@@ -12,6 +12,7 @@ fun main(){
 
     var length = string.length - 1
     var isPalindrome: Boolean = true
+
     for (i in 0..length/2){
         if ( string[i] != string[length-i]){
             isPalindrome = false
