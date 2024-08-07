@@ -7,10 +7,15 @@ package Type_of_func
  */
 fun main() {
     val array = arrayOf(1, 2, 3, 4, 5, 6, 7)
+    plusOne(array)
+}
+fun plusOne(array: Array<Int>){
+
     for (i in array.indices) {
         if (i % 2 == 0){
             ++array[i]
         }
     }
     println(array.contentToString())
+
 }
