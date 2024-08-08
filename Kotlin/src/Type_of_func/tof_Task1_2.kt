@@ -8,7 +8,7 @@ package Type_of_func
  */
 
 fun main() {
-    var n = 5
+    val n = 5
     factorial(n)
     degree(10, n)
 }
