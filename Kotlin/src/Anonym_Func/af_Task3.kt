@@ -1,4 +1,4 @@
-package higher_order_function
+package Anonym_Func
 
 /**
  * Напишите анонимную функцию для объединения двух строк и возврата результата.
