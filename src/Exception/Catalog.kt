@@ -7,6 +7,7 @@ class Catalog() : Person() {
         persons = Array<Person>(10) { Person() }
     }
 
+    // вывод на экран содержимого каталога
     fun printCatalog() {
         var isEmpty = true
         for (i in persons.indices) {
@@ -19,6 +20,7 @@ class Catalog() : Person() {
         if (isEmpty) println("Каталог пуст.")
     }
 
+    // вывод на экран номеров пустых позиций
     fun printEmpyPosition() {
         print("Свободные позиции: ")
         for (i in persons.indices) {
@@ -29,6 +31,7 @@ class Catalog() : Person() {
         println()
     }
 
+    //ввод данных о новом человеке (имени и фамилии) для последующего добавления в каталог.
     fun inputData(): Array<String> {
         val dataOfPerson = Array<String>(2) { "" }
 
@@ -64,6 +67,7 @@ class Catalog() : Person() {
         return dataOfPerson
     }
 
+    // добавление в каталог
     fun createList(list: Array<String>) {
         while (true) {
             try {
@@ -89,6 +93,7 @@ class Catalog() : Person() {
         }
     }
 
+    // меню программы
     fun greeting() {
         menu@ while (true) {
             println("Сделайте выбор:")
@@ -108,7 +113,7 @@ class Catalog() : Person() {
                 }
             } catch (e: MyException) {
                 println(e.message)
-            } catch (e: NumberFormatException){
+            } catch (e: NumberFormatException) {
                 println("Неправильный ввод.")
             }
         }
