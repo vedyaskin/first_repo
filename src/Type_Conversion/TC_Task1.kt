@@ -24,7 +24,6 @@ fun main() {
                 b += (a % 2).toString()
                 subfun(a / 2, b)
             }
-            return b
         }
         return subfun(a, "").reversed()
     }

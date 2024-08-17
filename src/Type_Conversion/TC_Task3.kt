@@ -8,7 +8,7 @@ package Type_Conversion
  *  если массив целых чисел - сумму элементов массива.
  */
 
-fun <T> onePlusOrSum(value: T) {
+fun <T> plusOneOrSum(value: T) {
     when (value) {
          is Int -> println(value + 1)
          is String -> println(value.length + 1)
@@ -20,7 +20,7 @@ fun <T> onePlusOrSum(value: T) {
     }
 }
 fun main(){
-    onePlusOrSum(2)
-    onePlusOrSum("дом")
-    onePlusOrSum(arrayOf(1,2,3))
+    plusOneOrSum(2)
+    plusOneOrSum("дом")
+    plusOneOrSum(arrayOf(1,2,3))
 }
