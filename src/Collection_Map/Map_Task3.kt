@@ -22,6 +22,7 @@ fun main() {
         println("${person.key} ${person.value}")
     }
 }
+// функция добавления
 infix fun MutableMap<Int, Person>.addPerson(person: Person) {
     val id = this.count() + 1
     this.put(id, person)
