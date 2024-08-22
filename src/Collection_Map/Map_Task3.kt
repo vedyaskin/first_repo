@@ -14,16 +14,16 @@ fun main() {
 
     var personHashMap = mutableMapOf<Int, Person>()
 
-    personHashMap addPerson person1
-    personHashMap addPerson person2
-    personHashMap addPerson person3
+    personHashMap add person1
+    personHashMap add person2
+    personHashMap add person3
 
     personHashMap.forEach { person ->
         println("${person.key} ${person.value}")
     }
 }
 // функция добавления
-infix fun MutableMap<Int, Person>.addPerson(person: Person) {
+infix fun MutableMap<Int, Person>.add(person: Person) {
     val id = this.count() + 1
     this.put(id, person)
 }
