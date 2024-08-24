@@ -1,4 +1,4 @@
-package Collection_Map
+package collection_Map
 
 /**
  * Дан map val people = mutableMapOf(1 to "Иван", 2 to "Петр",3 to "Лида", 4 to "Петр", 5 to "Анна").

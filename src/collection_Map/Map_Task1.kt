@@ -1,4 +1,4 @@
-package Collection_Map
+package collection_Map
 
 /**
  * Напишите функцию, которая получает на вход массив элементов типа К (Generic)

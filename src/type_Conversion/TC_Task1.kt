@@ -1,4 +1,4 @@
-package Type_Conversion
+package type_Conversion
 
 /**
  * Дана строка, содержащая в себе значение 12.3.

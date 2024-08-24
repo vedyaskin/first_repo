@@ -1,4 +1,4 @@
-package Collection_Filtration
+package collection_Filtration
 
 /**
  *  4. Дан map prizeMap, описывающий ключом порядковый номер сотрудника,
@@ -18,7 +18,7 @@ fun main() {
         25 to listOf("Григорий", 45)
     )
     val filterMap = prizeMap.filter { (key, value) ->
-        key % 10 == 5 && value[1] as Int > 20
+        key % 10 == 5 && (value[1] as Int) > 20
     }
     println(filterMap)
 }

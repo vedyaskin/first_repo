@@ -1,4 +1,4 @@
-package Type_Conversion
+package type_Conversion
 
 /**
  * Написать функцию, которая проверяет чем,

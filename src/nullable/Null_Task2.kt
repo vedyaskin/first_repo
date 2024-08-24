@@ -1,4 +1,4 @@
-package Nullable
+package nullable
 
 /**
  * 2. Создайте функцию,

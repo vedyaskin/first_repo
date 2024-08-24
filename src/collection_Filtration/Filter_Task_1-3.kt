@@ -1,4 +1,4 @@
-package Collection_Filtration
+package collection_Filtration
 
 /**
  * 1. Дан map, в которой элементы содержат ключ целое число, значения имена.

@@ -1,4 +1,4 @@
-package Collection_Map
+package collection_Map
 
 /**
  * Создать data класс Person,

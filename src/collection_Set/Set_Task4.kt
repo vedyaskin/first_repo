@@ -1,4 +1,4 @@
-package Collection_Set
+package collection_Set
 
 /**
  * 	Дан массив целых чисел.

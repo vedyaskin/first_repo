@@ -1,4 +1,4 @@
-package Nullable
+package nullable
 
 /**
  *  Дан массив строк array = arrayOf("Привет","как", null, "дела").
