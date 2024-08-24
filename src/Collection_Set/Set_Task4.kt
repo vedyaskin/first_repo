@@ -9,6 +9,7 @@ package Collection_Set
  */
 fun main() {
     var array = arrayOf(0, 6, 0, 0, 2, 0, 0, 0, 1, 0, 5, 0)
+    println("Исходный массив: ${array.contentToString()}")
     for (i in array.indices){
         if (array[i] == 0){
             for (j in i .. array.lastIndex){
@@ -24,5 +25,5 @@ fun main() {
 //    val arrayNoZero = array.filter{ it != 0}
 //    val arrayWithZero = array.filter{ it == 0}
 //    array = (arrayNoZero + arrayWithZero).toTypedArray()
-    println(array.contentToString())
+    println("Отсортированный массив: ${array.contentToString()}")
 }
