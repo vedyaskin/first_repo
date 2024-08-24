@@ -14,7 +14,7 @@ fun main(){
     }
     println(spb.toString())
 }
-class City (val name: String = "", var population: Int? = null ){
+class City (val name: String = "", var population: Int = 0 ){
     override fun toString(): String {
         return "City(name = '$name', population = $population)"
     }

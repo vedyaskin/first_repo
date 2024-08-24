@@ -7,10 +7,10 @@ package scope
  */
 
 fun main(){
-    val string: String? = "строка"
-    string?.let{
-        println(string)
-        println(string.length)
+    val string = "строка"
+    string.let{
+        println(it)
+        println(it.length)
     }
 
 }
