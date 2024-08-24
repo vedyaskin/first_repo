@@ -14,14 +14,13 @@ fun main() {
     val a = Point("A", 3, 9)
     val b = Point("B", 5, 7)
 
-    println(a)
-    println(b)
-
     a isAbove b
     a isRightOf b
 }
 
 infix fun Point.isAbove(point: Point) {
+    println(this)
+    println(point)
     if (this.y > point.y) {
         println("Точка ${this.name} выше точки ${point.name}")
     } else if (this.y < point.y) {
@@ -29,9 +28,12 @@ infix fun Point.isAbove(point: Point) {
     } else {
         println("Высота у точек ${this.name} и ${point.name} одинаковая")
     }
+    println()
 }
 
 infix fun Point.isRightOf(point: Point) {
+    println(this)
+    println(point)
     if (this.x > point.x) {
         println("Точка ${this.name} правее точки ${point.name}")
     } else if (this.x < point.x){
@@ -39,6 +41,7 @@ infix fun Point.isRightOf(point: Point) {
     } else{
         println("Координаты точек по оси Х совпадают.")
     }
+    println()
 }
 
 data class Point(val name: String = "", val x: Int = 0, val y: Int = 0)

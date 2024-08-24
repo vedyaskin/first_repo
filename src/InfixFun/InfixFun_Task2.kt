@@ -9,12 +9,13 @@ package InfixFun
  * Сообщение внутри функции выводится с помощью println.
  */
 
-fun main(){
+fun main() {
     val den = Person("Денис")
     den say "Привет!"
 }
-class Person(var name: String =""){
-    infix fun say (value: String){
+
+class Person(var name: String = "") {
+    infix fun say(value: String) {
         println("$name говорит: $value")
     }
 }
