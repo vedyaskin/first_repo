@@ -39,7 +39,7 @@ suspend fun main() = runBlocking {
         val unpackChar = async { unpack(listOfChar) }
 
         println("Количество элементов: ${unpackInt.await() + unpackChar.await()}")
-        println(concatenate(listOfInt,listOfChar))
+        println("Объединенный список: ${concatenate(listOfInt, listOfChar)}")
 
     }
     println("Время затраченных операций: $time")
